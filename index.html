@@ -6,60 +6,53 @@
   <title>Tier List – S/A/B/C/D</title>
   <style>
   :root{
-    --bg: #0f1115;
-    --panel: #161a22;
-    --muted: #8b93a7;
-    --text: #e8ebf1;
-    --accent: #7aa2f7;
-    --accent-2: #c0e57b;
-    --danger: #ff6b6b;
-    --radius: 12px;
-    --gap: 12px;
-    --shadow: 0 6px 18px rgba(0,0,0,.25);
-    --row-h: 120px;
-    --label-w: 90px;
+    --bg:#0f1115; --panel:#161a22; --muted:#8b93a7; --text:#e8ebf1;
+    --accent:#7aa2f7; --accent-2:#c0e57b; --danger:#ff6b6b;
+    --radius:12px; --gap:12px; --shadow:0 6px 18px rgba(0,0,0,.25);
+    --row-h:120px; --label-w:90px;
   }
-  * { box-sizing: border-box; }
-  html,body{ height:100%; }
-  body{ margin:0; background:var(--bg); color:var(--text); font: 15px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-  .topbar{ position:sticky; top:0; z-index:10; display:flex; align-items:center; justify-content:space-between; padding:16px; background: linear-gradient(to bottom, #0f1115, rgba(15,17,21,.6)); border-bottom: 1px solid #1f2430; backdrop-filter: blur(6px); }
-  .topbar h1{ margin:0; font-size:20px; }
-  .actions{ display:flex; gap:8px; flex-wrap:wrap; }
-  button,.import-btn{ background:var(--panel); color:var(--text); border:1px solid #262c39; padding:8px 12px; border-radius:10px; cursor:pointer; box-shadow: var(--shadow); font-size:14px; }
-  button:hover,.import-btn:hover{ border-color:var(--accent); }
-  button.danger{ border-color: var(--danger); }
-  #board-wrapper{ display:grid; grid-template-columns: 1fr minmax(270px, 360px); gap: var(--gap); padding: var(--gap); }
-  @media (max-width: 980px){ #board-wrapper{ grid-template-columns: 1fr; } .sidebar{ position:static; } }
-  #board{ display:flex; flex-direction:column; gap: var(--gap); }
-  .tier{ display:grid; grid-template-columns: var(--label-w) 1fr; background:var(--panel); border:1px solid #222736; border-radius: var(--radius); overflow:hidden; box-shadow: var(--shadow); min-height: var(--row-h); }
-  .tier .label{ display:flex; align-items:center; justify-content:center; font-weight:700; border-right:1px solid #222736; }
-  .tier[data-tier="S"] .label{ background:#ffb3c7; color:#2b0b15; }
-  .tier[data-tier="A"] .label{ background:#ffd59e; color:#2a1500; }
-  .tier[data-tier="B"] .label{ background:#fff0a8; color:#2a2600; }
-  .tier[data-tier="C"] .label{ background:#c8f7c5; color:#07200b; }
-  .tier[data-tier="D"] .label{ background:#b3e1ff; color:#062233; }
-  .dropzone{ display:flex; flex-wrap:wrap; gap: var(--gap); padding: var(--gap); min-height: calc(var(--row-h) - 2px); }
-  .dropzone.drag-over{ outline:2px dashed var(--accent); outline-offset:-6px; }
-  .tile{ display:flex; align-items:center; gap:10px; background:#0c0f14; border:1px solid #283143; border-radius:10px; padding:8px 10px; cursor:grab; min-width:140px; max-width:240px; box-shadow: var(--shadow); }
-  .tile img{ width:40px; height:40px; object-fit:cover; border-radius:6px; border:1px solid #1f2736; background:#151a24; }
-  .tile .title{ font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .sidebar{ display:flex; flex-direction:column; gap:16px; position:sticky; top:64px; align-self:start; }
-  form#form-add{ display:grid; gap:10px; background:var(--panel); padding:12px; border-radius: var(--radius); border:1px solid #222736; }
-  form label{ display:grid; gap:6px; color: var(--muted); font-size:14px;}
-  input, select{ background:#0c0f14; color:var(--text); border:1px solid #283143; border-radius:8px; padding:10px; }
-  form button[type="submit"]{ background: linear-gradient(180deg, #1e2636, #141a27); border:1px solid #2a3652; color:var(--text); padding:10px 12px; border-radius:10px; }
-  .trash{ text-align:center; padding:16px; border:1px dashed #3a4257; border-radius:12px; color:#b6bed3; }
-  .trash.drag-over{ border-color: var(--danger); color:#ffd7d7; }
-  .footer{ opacity:.7; text-align:center; padding:24px; font-size:13px; color:var(--muted); }
-  .exporting .sidebar, .exporting .topbar, .exporting .footer { display:none !important; }
-  .exporting #board-wrapper{ grid-template-columns: 1fr; }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  .topbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:16px;background:linear-gradient(to bottom,#0f1115,rgba(15,17,21,.6));border-bottom:1px solid #1f2430;backdrop-filter:blur(6px)}
+  .topbar h1{margin:0;font-size:20px}
+  .actions{display:flex;gap:8px;flex-wrap:wrap}
+  button,.import-btn{background:var(--panel);color:var(--text);border:1px solid #262c39;padding:8px 12px;border-radius:10px;cursor:pointer;box-shadow:var(--shadow);font-size:14px}
+  button:hover,.import-btn:hover{border-color:var(--accent)}
+  button.danger{border-color:var(--danger)}
+  #board-wrapper{display:grid;grid-template-columns:1fr minmax(270px,360px);gap:var(--gap);padding:var(--gap)}
+  @media (max-width:980px){#board-wrapper{grid-template-columns:1fr}.sidebar{position:static}}
+  #board{display:flex;flex-direction:column;gap:var(--gap)}
+  .tier{display:grid;grid-template-columns:var(--label-w) 1fr;background:var(--panel);border:1px solid #222736;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);min-height:var(--row-h)}
+  .tier .label{display:flex;align-items:center;justify-content:center;font-weight:700;border-right:1px solid #222736}
+  .tier[data-tier="S"] .label{background:#ffb3c7;color:#2b0b15}
+  .tier[data-tier="A"] .label{background:#ffd59e;color:#2a1500}
+  .tier[data-tier="B"] .label{background:#fff0a8;color:#2a2600}
+  .tier[data-tier="C"] .label{background:#c8f7c5;color:#07200b}
+  .tier[data-tier="D"] .label{background:#b3e1ff;color:#062233}
+  .dropzone{display:flex;flex-wrap:wrap;gap:var(--gap);padding:var(--gap);min-height:calc(var(--row-h) - 2px)}
+  .dropzone.drag-over{outline:2px dashed var(--accent);outline-offset:-6px}
+  .tile{display:flex;align-items:center;gap:10px;background:#0c0f14;border:1px solid #283143;border-radius:10px;padding:8px 10px;cursor:grab;min-width:140px;max-width:240px;box-shadow:var(--shadow)}
+  .tile img{width:40px;height:40px;object-fit:cover;border-radius:6px;border:1px solid #1f2736;background:#151a24}
+  .tile .title{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .sidebar{display:flex;flex-direction:column;gap:16px;position:sticky;top:64px;align-self:start}
+  form#form-add{display:grid;gap:10px;background:var(--panel);padding:12px;border-radius:var(--radius);border:1px solid #222736}
+  form label{display:grid;gap:6px;color:var(--muted);font-size:14px}
+  input,select{background:#0c0f14;color:var(--text);border:1px solid #283143;border-radius:8px;padding:10px}
+  .trash{text-align:center;padding:16px;border:1px dashed #3a4257;border-radius:12px;color:#b6bed3}
+  .trash.drag-over{border-color:var(--danger);color:#ffd7d7}
+  .footer{opacity:.7;text-align:center;padding:24px;font-size:13px;color:var(--muted)}
+  .exporting .sidebar,.exporting .topbar,.exporting .footer{display:none!important}
+  .exporting #board-wrapper{grid-template-columns:1fr}
   </style>
+  <!-- html2canvas für PNG/Share -->
   <script defer src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </head>
 <body>
   <header class="topbar">
     <h1>Tier List</h1>
     <div class="actions">
+      <button id="btn-share">Auf Handy speichern/teilen</button>
       <button id="btn-export-png">Export PNG</button>
       <button id="btn-export-json">Export JSON</button>
       <label class="import-btn">Import JSON
@@ -86,11 +79,8 @@
         <label>Direkt in Rang einordnen
           <select id="item-rank">
             <option value="palette">Palette (später zuordnen)</option>
-            <option value="S">S</option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="D">D</option>
+            <option value="S">S</option><option value="A">A</option>
+            <option value="B">B</option><option value="C">C</option><option value="D">D</option>
           </select>
         </label>
         <button type="submit">Hinzufügen</button>
@@ -107,22 +97,111 @@
   let state={items:{},tiers:Object.fromEntries(TIER_ORDER.map(t=>[t,[]])),palette:[]};
   const $=(s,r=document)=>r.querySelector(s);
   const uid=()=> 'i'+Math.random().toString(36).slice(2,9)+Date.now().toString(36);
+
   function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}
   function load(){const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return;try{const d=JSON.parse(raw);if(d.items&&d.tiers&&d.palette)state=d;}catch{}}
-  function createTile(item){const el=document.createElement('div');el.className='tile';el.draggable=true;el.dataset.id=item.id;const img=document.createElement('img');img.src=item.imgSrc||'';img.alt='';const t=document.createElement('div');t.className='title';t.textContent=item.title;el.append(img,t);el.addEventListener('dragstart',ev=>{ev.dataTransfer.setData('text/plain',item.id);});return el;}
-  function renderAll(){const b=$('#board');b.innerHTML='';for(const tier of TIER_ORDER){const row=document.createElement('div');row.className='tier';row.dataset.tier=tier;const l=document.createElement('div');l.className='label';l.textContent=tier;const drop=document.createElement('div');drop.className='dropzone';drop.dataset.tier=tier;for(const id of state.tiers[tier]) if(state.items[id]) drop.append(createTile(state.items[id]));addDrop(drop,id=>moveToTier(id,tier));row.append(l,drop);b.append(row);}const p=$('#palette-list');p.innerHTML='';for(const id of state.palette) if(state.items[id]) p.append(createTile(state.items[id]));addDrop(p,id=>moveToPalette(id));addDrop($('#trash'),id=>removeItem(id));}
-  function addDrop(z,on){z.addEventListener('dragover',ev=>{ev.preventDefault();z.classList.add('drag-over');});z.addEventListener('dragleave',()=>z.classList.remove('drag-over'));z.addEventListener('drop',ev=>{ev.preventDefault();z.classList.remove('drag-over');on(ev.dataTransfer.getData('text/plain'));});}
+
+  function createTile(item){
+    const el=document.createElement('div');el.className='tile';el.draggable=true;el.dataset.id=item.id;
+    const img=document.createElement('img');
+    img.src=item.imgSrc||'data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><rect width="100%" height="100%" fill="#0f1115"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="16" fill="#7aa2f7">★</text></svg>');
+    img.alt='';
+    const t=document.createElement('div');t.className='title';t.textContent=item.title;
+    el.append(img,t);
+    el.addEventListener('dragstart',ev=>{ev.dataTransfer.setData('text/plain',item.id);});
+    return el;
+  }
+
+  function renderAll(){
+    const b=$('#board');b.innerHTML='';
+    for(const tier of TIER_ORDER){
+      const row=document.createElement('div');row.className='tier';row.dataset.tier=tier;
+      const l=document.createElement('div');l.className='label';l.textContent=tier;
+      const drop=document.createElement('div');drop.className='dropzone';drop.dataset.tier=tier;
+      for(const id of state.tiers[tier]) if(state.items[id]) drop.append(createTile(state.items[id]));
+      addDrop(drop,id=>moveToTier(id,tier));
+      row.append(l,drop);b.append(row);
+    }
+    const p=$('#palette-list');p.innerHTML='';
+    for(const id of state.palette) if(state.items[id]) p.append(createTile(state.items[id]));
+    addDrop(p,id=>moveToPalette(id));
+    addDrop($('#trash'),id=>removeItem(id));
+  }
+
+  function addDrop(z,on){
+    z.addEventListener('dragover',ev=>{ev.preventDefault();z.classList.add('drag-over');});
+    z.addEventListener('dragleave',()=>z.classList.remove('drag-over'));
+    z.addEventListener('drop',ev=>{ev.preventDefault();z.classList.remove('drag-over');on(ev.dataTransfer.getData('text/plain'));});
+  }
+
   function moveToTier(id,t){for(const x of TIER_ORDER)state.tiers[x]=state.tiers[x].filter(y=>y!==id);state.palette=state.palette.filter(y=>y!==id);state.tiers[t].push(id);save();renderAll();}
   function moveToPalette(id){for(const t of TIER_ORDER)state.tiers[t]=state.tiers[t].filter(x=>x!==id);if(!state.palette.includes(id))state.palette.push(id);save();renderAll();}
   function removeItem(id){delete state.items[id];for(const t of TIER_ORDER)state.tiers[t]=state.tiers[t].filter(x=>x!==id);state.palette=state.palette.filter(x=>x!==id);save();renderAll();}
-  async function addItem({title,file,url,target}){let img='';if(file){img=await fileToDataURL(file);}else if(url){img=url;}const id=uid();state.items[id]={id,title,imgSrc:img};if(target&&TIER_ORDER.includes(target)){state.tiers[target].push(id);}else{state.palette.push(id);}save();renderAll();}
+
+  async function addItem({title,file,url,target}){
+    let img=''; if(file){img=await fileToDataURL(file);} else if(url){img=url;}
+    const id=uid(); state.items[id]={id,title,imgSrc:img};
+    if(target&&TIER_ORDER.includes(target)){state.tiers[target].push(id);}else{state.palette.push(id);}
+    save(); renderAll();
+  }
   function fileToDataURL(f){return new Promise(r=>{const fr=new FileReader();fr.onload=()=>r(fr.result);fr.readAsDataURL(f);});}
-  async function exportPNG(){document.body.classList.add('exporting');await new Promise(r=>setTimeout(r,50));const c=await html2canvas($('#board'),{backgroundColor:'#0f1115',scale:2});document.body.classList.remove('exporting');downloadURL(c.toDataURL(),'tierlist.png');}
+
+  // --- PNG/Share ---
+  async function makeCanvas(){
+    document.body.classList.add('exporting');
+    await new Promise(r=>setTimeout(r,50)); // Layout stabilisieren
+    const canvas=await html2canvas($('#board'),{backgroundColor:'#0f1115',scale:2});
+    document.body.classList.remove('exporting');
+    return canvas;
+  }
+  async function exportPNG(){
+    const c=await makeCanvas();
+    const url=c.toDataURL('image/png');
+    downloadURL(url,'tierlist.png');
+  }
+  async function sharePNG(){
+    try{
+      const c=await makeCanvas();
+      const blob=await new Promise(res=>c.toBlob(res,'image/png'));
+      const file=new File([blob],'tierlist.png',{type:'image/png'});
+      if(navigator.canShare && navigator.canShare({files:[file]})){
+        await navigator.share({files:[file], title:'Meine Tier List', text:'Erstellt mit meiner Tier-List-App'});
+      }else{
+        // Fallback: Download-Link
+        downloadURL(URL.createObjectURL(blob),'tierlist.png');
+      }
+    }catch(e){
+      alert('Konnte nicht teilen/speichern: '+(e&&e.message?e.message:e));
+    }
+  }
   function exportJSON(){downloadURL(URL.createObjectURL(new Blob([JSON.stringify(state,null,2)],{type:'application/json'})),'tierlist.json');}
   function downloadURL(u,f){const a=document.createElement('a');a.href=u;a.download=f;document.body.append(a);a.click();a.remove();}
-  function importJSONFile(f){const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(d.items&&d.tiers&&d.palette){state=d;save();renderAll();}else throw 0;}catch{alert('Import fehlgeschlagen');}};r.readAsText(f);}
+
+  function importJSONFile(f){
+    const r=new FileReader();
+    r.onload=()=>{try{const d=JSON.parse(r.result);if(d.items&&d.tiers&&d.palette){state=d;save();renderAll();}else throw 0;}catch{alert('Import fehlgeschlagen');}};
+    r.readAsText(f);
+  }
   function resetAll(){if(confirm('Alles löschen?')){state={items:{},tiers:Object.fromEntries(TIER_ORDER.map(t=>[t,[]])),palette:[]};save();renderAll();}}
-  window.addEventListener('DOMContentLoaded',()=>{load();renderAll();$('#btn-export-png').onclick=exportPNG;$('#btn-export-json').onclick=exportJSON;$('#btn-reset').onclick=resetAll;$('#input-import-json').onchange=e=>{if(e.target.files[0])importJSONFile(e.target.files[0]);};$('#form-add').onsubmit=async e=>{e.preventDefault();await addItem({title:$('#item-title').value,file:$('#item-image').files[0],url:$('#item-image-url').value.trim(),target:$('#item-rank').value==='palette'?null:$('#item-rank').value});e.target.reset();};});
+
+  window.addEventListener('DOMContentLoaded',()=>{
+    load(); renderAll();
+    $('#btn-share').onclick=sharePNG;
+    $('#btn-export-png').onclick=exportPNG;
+    $('#btn-export-json').onclick=exportJSON;
+    $('#btn-reset').onclick=resetAll;
+    $('#input-import-json').onchange=e=>{if(e.target.files[0])importJSONFile(e.target.files[0]);};
+    $('#form-add').onsubmit=async e=>{
+      e.preventDefault();
+      await addItem({
+        title:$('#item-title').value,
+        file:$('#item-image').files[0],
+        url:$('#item-image-url').value.trim(),
+        target:($('#item-rank').value==='palette'?null:$('#item-rank').value)
+      });
+      e.target.reset();
+    };
+  });
   </script>
 </body>
 </html>
